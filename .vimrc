@@ -18,6 +18,12 @@ Plugin 'vim-scripts/peaksea'
 Plugin 'Yggdroot/duoduo'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'amix/open_file_under_cursor.vim'
+" snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
