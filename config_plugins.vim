@@ -156,3 +156,20 @@ let g:lightline = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:gitgutter_enabled=0
 " nnoremap <silent> <leader>d :GitGutterToggle<cr>
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga :EasyAlign<CR>
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga :EasyAlign<CR>
+
+"PDV
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates"
+nmap <c-p> :call pdv#DocumentCurrentLine()<CR>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" sidesearch
+" SideSearch current word and return to original window
+nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p

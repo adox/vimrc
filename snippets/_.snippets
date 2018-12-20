@@ -1,19 +1,25 @@
-snippet test
-	{"foo": "${1}", "bar": "${2}"}
 snippet s
 	snippet ${0}
+snippet ns
+	namespace 
 snippet ec
 	echo ${0};
 snippet pu
-	public
+	public 
 snippet pr
-	private
+	private 
 snippet prt
-	protected
+	protected 
 snippet st
 	static 
 snippet fun
-	function ${1}(${2}) {
+	function ${1}(${2}) 
+	{
+		${3}
+	}
+snippet pf
+	public function ${1}(${2}) 
+	{
 		${3}
 	}
 snippet th
@@ -32,3 +38,5 @@ snippet vd
 	var_dump(${1});
 snippet vdd
 	var_dump(${1}); die;
+snippet e
+	throw new \Exception(${1});

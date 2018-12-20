@@ -33,8 +33,8 @@ nnoremap <Right> :bnext<CR>
 
 " lightline-buffer ui settings
 " replace these symbols with ascii characters if your environment does not support unicode
-let g:lightline_buffer_logo = ' '
-let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_logo = 'A'
+let g:lightline_buffer_readonly_icon = 'R'
 let g:lightline_buffer_modified_icon = '✭'
 let g:lightline_buffer_git_icon = ' '
 let g:lightline_buffer_ellipsis_icon = '..'
