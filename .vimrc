@@ -1,46 +1,77 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" set shell=/bin/bash
+" set nocompatible              " be iMproved, required
+" filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Init Plug - autoinstall
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'taohexxx/lightline-buffer'
-Plugin 'vim-scripts/mru.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/bufexplorer.zip'
-Plugin 'vim-scripts/peaksea'
-Plugin 'Yggdroot/duoduo'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'amix/open_file_under_cursor.vim'
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Merginal'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+" Plug 'taohexxx/lightline-buffer'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+"
 " snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
 
-Plugin 'mileszs/ack.vim'
+" Plug 'ludovicchabant/vim-gutentags'
+Plug 'jceb/vim-orgmode'
+Plug 'maxbrunsfeld/vim-yankstack'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" php documetor plugin
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+
+" Deoplete for vim
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'Shougo/deoplete.nvim'
+Plug 'kristijanhusak/deoplete-phpactor'
+
+Plug 'StanAngeloff/php.vim'
+Plug 'beanworks/vim-phpfmt'
+
+Plug 'tmsvg/pear-tree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-syntastic/syntastic'
+" phpcd
+"Plug 'lvht/phpcd.vim'
+
+" vcscommand
+" Plug 'vcscommand.vim'
+
+Plug 'mzlogin/vim-markdown-toc'
+
+Plug 'chriskempson/vim-tomorrow-theme'
+
+call plug#end()
+
+" filetype plugin indent on    " required
+
 source ~/.vim/config_basic.vim
 source ~/.vim/config_plugins.vim
 source ~/.vim/config_extended.vim
-source ~/.vim/config_lightline.vim
+" source ~/.vim/config_lightline.vim
 source ~/.vim/config_my.vim
